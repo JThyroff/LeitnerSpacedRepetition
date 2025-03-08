@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <style>
+        body {
+            width: 400px;
+            height: 500px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        hr {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin: 10px 0;
+        }
+        .options {
+            font-size: 12px;
+        }
+        .options a {
+            text-decoration: none;
+            color: blue;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-end;
+        }
+  </style>
+    </style>
+</head>
+<body>
+    <h2>Hello! 👋</h2>
+
+    <label id="levellabel">
+        Your levels due for today: 
+    </label>
+
+    <hr> <!-- Trennlinie -->
+    <div>
+        <h3>🔧 Configuration: 🔧</h3>
+        <p>Choose how often you want to repeat each level!</p>
+    </div>
+    
+
+    <label>
+        Level 1 interval (days): <input type="number" id="interval-1" name="interval-1", style="width: 50px;">
+    </label>
+    <label>
+        Level 2 interval (days): <input type="number" id="interval-2" name="interval-2", style="width: 50px;">
+    </label>
+    <label>
+        Level 3 interval (days): <input type="number" id="interval-3" name="interval-3", style="width: 50px;">
+    </label>
+    <label>
+        Level 4 interval (days): <input type="number" id="interval-4" name="interval-4", style="width: 50px;">
+    </label>
+    <label>
+        Level 5 interval (days): <input type="number" id="interval-5" name="interval-5", style="width: 50px;">
+    </label>
+    <label>
+        Level 6 interval (days): <input type="number" id="interval-6" name="interval-6", style="width: 50px;">
+    </label>
+    <label>
+        Level 7 interval (days): <input type="number" id="interval-7" name="interval-7", style="width: 50px;">
+    </label>
+
+    <div class="container">
+        <button id="resetbutton", style="width: 80px; margin: 10px;">Reset!</button>
+        <button id="savebutton", style="width: 80px; margin: 10px;">Save!</button>    
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
