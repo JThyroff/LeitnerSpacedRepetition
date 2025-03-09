@@ -51,11 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return diffDays;
     }
 
-    function update_levels(){
-        const diffDays = date_diff();
-
+    function update_levels(id, diffDays, daystring, endstring){
         let levels_todo = ""
-        //Calculate the levels for today
+        //Calculate the levels the respective day
         browser.storage.local.get(inputs).then((result) =>{
             inputs.forEach(id =>{
                 if ((diffDays % result[id]) === 0){
@@ -68,8 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log(levels_todo)
     
-            document.getElementById("levellabel").textContent = "Your levels due for today: "+levels_todo+" ☺️"
+            document.getElementById(id).textContent = "Your levels due " + daystring + ": " +levels_todo + endstring;
         });
+    }
+
+    function update_all_levels(){
+        const diffDays = date_diff();
+
+        update_levels("levellabel",diffDays, "today", " ☺️");
+        update_levels("levellabelyesterday",diffDays-1, "yesterday","");
+        update_levels("levellabeltomorrow",diffDays+1, "tomorrow","");
     }
 
     // Load saved values when the popup opens
@@ -83,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    update_levels();
+    update_all_levels();
 
     // Save values when clicking the save button
     document.getElementById("savebutton").addEventListener("click", function () {
@@ -96,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Settings saved!");
         });
 
-        update_levels();
+        update_all_levels();
     });
 
     // Reset values when clicking the reset button
@@ -111,6 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Values reset and settings saved!");
         });
 
-        update_levels();
+        update_all_levels();
     });
 });
