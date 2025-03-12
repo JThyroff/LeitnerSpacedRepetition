@@ -87,9 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 reset_interval(document,id);
             }
         });
+        update_all_levels();
     });
-
-    update_all_levels();
 
     // Save values when clicking the save button
     document.getElementById("savebutton").addEventListener("click", function () {
