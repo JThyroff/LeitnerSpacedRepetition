@@ -51,10 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return diffDays;
     }
 
+    const storage = chrome.storage || browser.storage; // Use `chrome.storage` if available, fallback to `browser.storage`
+
     function update_levels(id, diffDays, daystring, endstring){
         let levels_todo = ""
         //Calculate the levels the respective day
-        browser.storage.local.get(inputs).then((result) =>{
+        storage.local.get(inputs).then((result) =>{
             inputs.forEach(id =>{
                 if ((diffDays % result[id]) === 0){
                     const level_number = id.replace("interval-", "");
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Load saved values when the popup opens
-    browser.storage.local.get(inputs).then((result) => {
+    storage.local.get(inputs).then((result) => {
         inputs.forEach(id => {
             if (result[id] !== undefined) {
                 document.getElementById(id).value = result[id];
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
             values[id] = document.getElementById(id).value;
         });
 
-        browser.storage.local.set(values).then(() => {
+        storage.local.set(values).then(() => {
             alert("Settings saved!");
         });
 
@@ -112,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             values[id] = document.getElementById(id).value;
         });
 
-        browser.storage.local.set(values).then(() => {
+        storage.local.set(values).then(() => {
             alert("Values reset and settings saved!");
         });
 
