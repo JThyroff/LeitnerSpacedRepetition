@@ -2,6 +2,7 @@
 A Firefox/Chrome plugin for Leitner Spaced Repetition. Pin it to your toolbar and let your browser remind the levels that you have to revise today!
 
 ## [-> Download on addons.mozilla.org](https://addons.mozilla.org/en-GB/firefox/addon/leitner-spaced-repetition/)
+## [-> Download on chromewebstore.google.com](https://chromewebstore.google.com/detail/njplelikifffemfkjdeljhckocganhdh?utm_source=item-share-cb)
 
 ### Technical
 
