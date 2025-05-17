@@ -4,6 +4,11 @@ A Firefox/Chrome plugin for Leitner Spaced Repetition. Pin it to your toolbar an
 ## [-> Download on addons.mozilla.org](https://addons.mozilla.org/en-GB/firefox/addon/leitner-spaced-repetition/)
 ## [-> Download on chromewebstore.google.com](https://chromewebstore.google.com/detail/njplelikifffemfkjdeljhckocganhdh?utm_source=item-share-cb)
 
+### Support my Work
+If you enjoy my projects, you can buy me a coffee!  
+
+[![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://buymeacoffee.com/jojo_thy)
+
 ### Technical
 
 This plugin uses the storage permission to store the user configuration locally. See [manifest.json](manifest.json) for reference. 
